@@ -198,7 +198,7 @@ class FFTransformer(nn.Module):
         if self.word_emb is None:
             inp = dec_inp
             mask = mask_from_lens(seq_lens).unsqueeze(2)
-            prom_inp = 0
+            prom_emb = torch.tensor(prom_inp)
         else:
             inp = self.word_emb(dec_inp)
             # [bsz x L x 1]
